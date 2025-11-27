@@ -26,32 +26,12 @@ class ObavijestiBell {
     }
 
     injectHTML() {
-        const rightHeader = document.querySelector('#id-right .login_block_user');
-        if (!rightHeader) {
-            console.warn('SEUP: Cannot find header element, trying alternative selectors');
-            const alternatives = [
-                '#id-right',
-                '.side-nav-vert',
-                'header .tmenu',
-                '.login_block'
-            ];
-
-            for (const selector of alternatives) {
-                const element = document.querySelector(selector);
-                if (element) {
-                    this.injectIntoElement(element);
-                    return;
-                }
-            }
-
-            console.error('SEUP: Could not find suitable header element');
+        const container = document.getElementById('seupNotificationContainer');
+        if (!container) {
+            console.error('SEUP: Cannot find #seupNotificationContainer');
             return;
         }
 
-        this.injectIntoElement(rightHeader);
-    }
-
-    injectIntoElement(targetElement) {
         const bellHTML = `
             <div class="seup-notification-bell-wrapper">
                 <button class="seup-notification-bell" id="seupNotificationBell" title="Obavijesti">
@@ -71,7 +51,7 @@ class ObavijestiBell {
             </div>
         `;
 
-        targetElement.insertAdjacentHTML('beforeend', bellHTML);
+        container.innerHTML = bellHTML;
 
         this.bellElement = document.getElementById('seupNotificationBell');
         this.dropdownElement = document.getElementById('seupNotificationDropdown');

@@ -205,8 +205,13 @@ for ($i = 1; $i <= 5; $i++) {
 print '</div>';
 
 print '<div class="seup-hero-content">';
+print '<div class="seup-hero-header">';
+print '<div class="seup-hero-title-section">';
 print '<h1 class="seup-hero-title">Sustav elektronskog uredskog poslovanja</h1>';
 print '<p class="seup-hero-subtitle">Moderan i efikasan način upravljanja dokumentima, predmetima i administrativnim procesima u javnoj upravi</p>';
+print '</div>';
+print '<div id="seupNotificationContainer"></div>';
+print '</div>';
 
 // Action cards
 print '<div class="seup-actions">';
