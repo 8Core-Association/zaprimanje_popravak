@@ -8,11 +8,18 @@
  * distribuirati ili mijenjati bez izričitog dopuštenja autora.
  */
 
+body > #seupNotificationContainer,
+body #seupNotificationContainer,
 #seupNotificationContainer {
     position: fixed !important;
     top: 80px !important;
     right: 30px !important;
-    z-index: 9999 !important;
+    z-index: 99999 !important;
+    pointer-events: auto !important;
+}
+
+body.print #seupNotificationContainer {
+    display: none !important;
 }
 
 .seup-notification-bell-wrapper {
