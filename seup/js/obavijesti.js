@@ -269,8 +269,8 @@ class ObavijestiBell {
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-        new ObavijestiBell();
+        setTimeout(() => new ObavijestiBell(), 100);
     });
 } else {
-    new ObavijestiBell();
+    setTimeout(() => new ObavijestiBell(), 100);
 }
