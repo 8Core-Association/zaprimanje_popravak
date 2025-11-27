@@ -12,7 +12,7 @@
 
 class Obavijesti_Helper
 {
-    const CENTRAL_SERVER_URL = 'https://dokumentacija.8core.hr/api/notifications.json';
+    const CENTRAL_SERVER_URL = 'https://dokumentacija.8core.hr/notifications_mock.json';
     const CACHE_DURATION = 300;
 
     public static function dohvatiSCentralnogServera($od_datuma = null)
@@ -44,7 +44,7 @@ class Obavijesti_Helper
             return false;
         }
 
-        return isset($data['notifications']) ? $data['notifications'] : [];
+        return isset($data['obavijesti']) ? $data['obavijesti'] : [];
     }
 
     public static function spremiUEvidenciju($db, $notification_uuid, $fk_user)

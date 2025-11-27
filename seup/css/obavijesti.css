@@ -1,0 +1,204 @@
+/**
+ * Plaćena licenca
+ * (c) 2025 Tomislav Galić <tomislav@8core.hr>
+ * Suradnik: Marko Šimunović <marko@8core.hr>
+ * Web: https://8core.hr
+ * Kontakt: info@8core.hr | Tel: +385 099 851 0717
+ * Sva prava pridržana. Ovaj softver je vlasnički i zabranjeno ga je
+ * distribuirati ili mijenjati bez izričitog dopuštenja autora.
+ */
+
+.seup-notification-bell-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.seup-notification-bell {
+    position: relative;
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.seup-notification-bell:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #0066cc;
+}
+
+.seup-notification-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: #e74c3c;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 10px;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.seup-notification-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 380px;
+    max-height: 500px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.seup-notification-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+}
+
+.seup-notification-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.seup-notification-list {
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.seup-notification-loading,
+.seup-notification-empty,
+.seup-notification-error {
+    padding: 40px 20px;
+    text-align: center;
+    color: #666;
+}
+
+.seup-notification-error {
+    color: #e74c3c;
+}
+
+.seup-notification-item {
+    display: flex;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    position: relative;
+}
+
+.seup-notification-item:hover {
+    background: #f8f9fa;
+}
+
+.seup-notification-item.unread {
+    background: #e8f4fd;
+}
+
+.seup-notification-item.unread:hover {
+    background: #d6ebfa;
+}
+
+.seup-notification-content {
+    flex: 1;
+    padding-right: 10px;
+}
+
+.seup-notification-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.seup-notification-message {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.seup-notification-time {
+    font-size: 11px;
+    color: #999;
+}
+
+.seup-notification-dismiss {
+    background: transparent;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 14px;
+    transition: color 0.2s ease;
+    align-self: flex-start;
+}
+
+.seup-notification-dismiss:hover {
+    color: #e74c3c;
+}
+
+.seup-notification-item.prioritet-hitan {
+    border-left: 4px solid #e74c3c;
+}
+
+.seup-notification-item.prioritet-normalan {
+    border-left: 4px solid #3498db;
+}
+
+.seup-notification-item.prioritet-info {
+    border-left: 4px solid #95a5a6;
+}
+
+.seup-notification-item.tip-zaprimanje .seup-notification-title:before {
+    content: '📨 ';
+}
+
+.seup-notification-item.tip-rok .seup-notification-title:before {
+    content: '⏰ ';
+}
+
+.seup-notification-item.tip-akt .seup-notification-title:before {
+    content: '📄 ';
+}
+
+.seup-notification-item.tip-predmet .seup-notification-title:before {
+    content: '📁 ';
+}
+
+.seup-notification-item.tip-otprema .seup-notification-title:before {
+    content: '📤 ';
+}
+
+@media (max-width: 480px) {
+    .seup-notification-dropdown {
+        width: 320px;
+        right: -20px;
+    }
+}
