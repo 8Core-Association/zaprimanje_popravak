@@ -1,0 +1,59 @@
+{
+  "obavijesti": [
+    {
+      "id": 1,
+      "naslov": "Nova zaprimljena pošta",
+      "poruka": "Zaprimljen novi dokument: Zahtjev za informaciju",
+      "tip": "zaprimanje",
+      "prioritet": "normalan",
+      "datum": "2025-01-27 10:30:00",
+      "procitano": false,
+      "link": "/seup/pages/zaprimanja.php?id=123"
+    },
+    {
+      "id": 2,
+      "naslov": "Hitno: Rok ističe sutra",
+      "poruka": "Predmet 'Nabava opreme 2025' - rok za odgovor ističe sutra",
+      "tip": "rok",
+      "prioritet": "hitan",
+      "datum": "2025-01-27 09:15:00",
+      "procitano": false,
+      "link": "/seup/pages/predmet.php?id=456"
+    },
+    {
+      "id": 3,
+      "naslov": "Novi akt zahtijeva potpis",
+      "poruka": "Akt 'Rješenje o odobrenju' čeka potpis nadređenog",
+      "tip": "akt",
+      "prioritet": "normalan",
+      "datum": "2025-01-27 08:45:00",
+      "procitano": true,
+      "link": "/seup/pages/akt.php?id=789"
+    },
+    {
+      "id": 4,
+      "naslov": "Predmet dodijeljen",
+      "poruka": "Dodijeljen vam je predmet: 'Analiza godišnjeg izvješća'",
+      "tip": "predmet",
+      "prioritet": "normalan",
+      "datum": "2025-01-26 16:20:00",
+      "procitano": true,
+      "link": "/seup/pages/predmet.php?id=321"
+    },
+    {
+      "id": 5,
+      "naslov": "Otprema poslana",
+      "poruka": "Otprema 'Odgovor na upit' uspješno poslana primatelju",
+      "tip": "otprema",
+      "prioritet": "info",
+      "datum": "2025-01-26 14:10:00",
+      "procitano": true,
+      "link": "/seup/pages/otpreme.php?id=654"
+    }
+  ],
+  "metadata": {
+    "ukupno": 5,
+    "neprocitano": 2,
+    "posljednje_azuriranje": "2025-01-27 10:30:00"
+  }
+}
