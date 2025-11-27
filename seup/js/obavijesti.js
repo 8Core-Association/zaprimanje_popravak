@@ -267,10 +267,5 @@ class ObavijestiBell {
     }
 }
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => new ObavijestiBell(), 100);
-    });
-} else {
-    setTimeout(() => new ObavijestiBell(), 100);
-}
+// Export for manual initialization
+window.ObavijestiBell = ObavijestiBell;

@@ -417,6 +417,15 @@ print '</script>';
 print '<script src="/custom/seup/js/seup-modern.js"></script>';
 print '<script src="js/setup-modal.js"></script>';
 print '<script src="js/obavijesti.js"></script>';
+print '<script>';
+print 'if (document.readyState === "loading") {';
+print '    document.addEventListener("DOMContentLoaded", function() {';
+print '        setTimeout(function() { new window.ObavijestiBell(); }, 200);';
+print '    });';
+print '} else {';
+print '    setTimeout(function() { new window.ObavijestiBell(); }, 200);';
+print '}';
+print '</script>';
 
 // End of page
 llxFooter();
