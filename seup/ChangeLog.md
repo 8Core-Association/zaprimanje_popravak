@@ -224,7 +224,7 @@ Dokumentacija ažurirana: README, struktura, changelog.
 
 ---
 
-## 4.2.5 – Omot & Stabilizacija (CURRENT)
+## 4.2.5 – Omot & Stabilizacija
 
 **Datum:** Q1 2025
 
@@ -235,5 +235,26 @@ Dokumentacija ažurirana: README, struktura, changelog.
 - 🔧 Popravke funkcionalnosti u zaprimanjima i otpremama
 - 🐛 Bugfixevi i stability improvements
 - 🚀 Priprema za production deployment
+
+---
+
+## 4.2.6 – Database Auto-initialization (CURRENT)
+
+**Datum:** 27.11.2025
+
+### Database Management
+- 🔄 Sinkronizirana kreacija `llx_a_otprema` tablice između SQL filea i PHP metode
+- 🔗 Dodani FOREIGN KEY constrainti u `createSeupDatabaseTables()` za konzistentnost
+- ⚡ Tablice se automatski kreiraju pri prvom učitavanju stranice
+- ✅ Ne zahtijeva ponovno aktiviranje/deaktiviranje modula
+- 🛡️ Puni relacijski integritet - automatska CASCADE i RESTRICT pravila
+- 🗄️ Optimizirano za clean instalacije - sve radi "out of the box"
+
+### Tehničke izmjene
+- Dodan `CONSTRAINT fk_otprema_predmet` s ON DELETE CASCADE
+- Dodan `CONSTRAINT fk_otprema_ecm` s ON DELETE CASCADE
+- Dodan `CONSTRAINT fk_otprema_potvrda` s ON DELETE SET NULL
+- Dodan `CONSTRAINT fk_otprema_user` s ON DELETE RESTRICT
+- Ujednačena struktura između `llx_a_otprema.sql` i `predmet_helper.class.php`
 
 ---
