@@ -204,8 +204,6 @@ for ($i = 1; $i <= 5; $i++) {
 }
 print '</div>';
 
-print '<div id="seupNotificationContainer"></div>';
-
 print '<div class="seup-hero-content">';
 print '<h1 class="seup-hero-title">Sustav elektronskog uredskog poslovanja</h1>';
 print '<p class="seup-hero-subtitle">Moderan i efikasan način upravljanja dokumentima, predmetima i administrativnim procesima u javnoj upravi</p>';
@@ -272,6 +270,8 @@ print '</div>'; // seup-stats
 
 print '</div>'; // seup-hero-content
 print '</main>';
+
+print '<div id="seupNotificationContainer"></div>';
 
 // Setup Check Modal
 if (!$all_configured) {
