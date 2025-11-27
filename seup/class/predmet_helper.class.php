@@ -151,7 +151,11 @@ class Predmet_helper
                 KEY fk_potvrda_otprema (fk_potvrda_ecm_file),
                 KEY fk_user_otprema (fk_user_creat),
                 KEY idx_datum_otpreme (datum_otpreme),
-                KEY idx_tip_dokumenta (tip_dokumenta)
+                KEY idx_tip_dokumenta (tip_dokumenta),
+                CONSTRAINT fk_otprema_predmet FOREIGN KEY (ID_predmeta) REFERENCES " . MAIN_DB_PREFIX . "a_predmet (ID_predmeta) ON DELETE CASCADE,
+                CONSTRAINT fk_otprema_ecm FOREIGN KEY (fk_ecm_file) REFERENCES " . MAIN_DB_PREFIX . "ecm_files (rowid) ON DELETE CASCADE,
+                CONSTRAINT fk_otprema_potvrda FOREIGN KEY (fk_potvrda_ecm_file) REFERENCES " . MAIN_DB_PREFIX . "ecm_files (rowid) ON DELETE SET NULL,
+                CONSTRAINT fk_otprema_user FOREIGN KEY (fk_user_creat) REFERENCES " . MAIN_DB_PREFIX . "user (rowid) ON DELETE RESTRICT
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8"
         ];
 
