@@ -271,7 +271,25 @@ print '</div>'; // seup-stats
 print '</div>'; // seup-hero-content
 print '</main>';
 
-print '<div id="seupNotificationContainer"></div>';
+// Notification Bell - Direct HTML injection
+print '<div id="seupNotificationContainer" style="position: fixed !important; top: 80px !important; right: 30px !important; z-index: 99999 !important;">';
+print '    <div class="seup-notification-bell-wrapper">';
+print '        <button class="seup-notification-bell" id="seupNotificationBell" title="Obavijesti">';
+print '            <i class="fas fa-bell"></i>';
+print '            <span class="seup-notification-badge" id="seupNotificationBadge" style="display: none;">0</span>';
+print '        </button>';
+print '        <div class="seup-notification-dropdown" id="seupNotificationDropdown" style="display: none;">';
+print '            <div class="seup-notification-header">';
+print '                <h4>Obavijesti</h4>';
+print '            </div>';
+print '            <div class="seup-notification-list" id="seupNotificationList">';
+print '                <div class="seup-notification-loading">';
+print '                    <i class="fas fa-spinner fa-spin"></i> Učitavanje...';
+print '                </div>';
+print '            </div>';
+print '        </div>';
+print '    </div>';
+print '</div>';
 
 // Setup Check Modal
 if (!$all_configured) {

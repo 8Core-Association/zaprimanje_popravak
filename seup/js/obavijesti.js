@@ -19,43 +19,23 @@ class ObavijestiBell {
     }
 
     init() {
-        this.injectHTML();
+        console.log('SEUP ObavijestiBell: Initializing...');
+        this.initElements();
         this.attachEventListeners();
         this.loadObavijesti();
         this.startPolling();
     }
 
-    injectHTML() {
-        const container = document.getElementById('seupNotificationContainer');
-        if (!container) {
-            console.error('SEUP: Cannot find #seupNotificationContainer');
-            return;
-        }
-
-        const bellHTML = `
-            <div class="seup-notification-bell-wrapper">
-                <button class="seup-notification-bell" id="seupNotificationBell" title="Obavijesti">
-                    <i class="fas fa-bell"></i>
-                    <span class="seup-notification-badge" id="seupNotificationBadge" style="display: none;">0</span>
-                </button>
-                <div class="seup-notification-dropdown" id="seupNotificationDropdown" style="display: none;">
-                    <div class="seup-notification-header">
-                        <h4>Obavijesti</h4>
-                    </div>
-                    <div class="seup-notification-list" id="seupNotificationList">
-                        <div class="seup-notification-loading">
-                            <i class="fas fa-spinner fa-spin"></i> Učitavanje...
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        container.innerHTML = bellHTML;
-
+    initElements() {
         this.bellElement = document.getElementById('seupNotificationBell');
         this.dropdownElement = document.getElementById('seupNotificationDropdown');
         this.badgeElement = document.getElementById('seupNotificationBadge');
+
+        if (!this.bellElement) {
+            console.error('SEUP: Cannot find notification bell elements!');
+            return;
+        }
+        console.log('SEUP ObavijestiBell: Elements initialized successfully', this.bellElement);
     }
 
     attachEventListeners() {
