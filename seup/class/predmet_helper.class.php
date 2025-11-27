@@ -126,6 +126,32 @@ class Predmet_helper
                 PRIMARY KEY (ID_arhive),
                 KEY fk_predmet_arhiva (ID_predmeta),
                 KEY fk_user_arhiva (fk_user_arhivirao)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8",
+
+            "CREATE TABLE IF NOT EXISTS " . MAIN_DB_PREFIX . "a_otprema (
+                ID_otpreme int(11) NOT NULL AUTO_INCREMENT,
+                fk_ecm_file int(11) NOT NULL,
+                tip_dokumenta enum('akt','prilog','nedodijeljeni') NOT NULL,
+                ID_predmeta int(11) NOT NULL,
+                primatelj_naziv varchar(255) NOT NULL,
+                primatelj_adresa varchar(500) DEFAULT NULL,
+                primatelj_email varchar(100) DEFAULT NULL,
+                primatelj_telefon varchar(50) DEFAULT NULL,
+                datum_otpreme date NOT NULL,
+                nacin_otpreme enum('posta','email','rucno','ostalo') NOT NULL,
+                naziv_predmeta varchar(255) DEFAULT NULL,
+                klasifikacijska_oznaka varchar(100) DEFAULT NULL,
+                fk_potvrda_ecm_file int(11) DEFAULT NULL,
+                napomena text DEFAULT NULL,
+                fk_user_creat int(11) NOT NULL,
+                datum_kreiranja timestamp DEFAULT CURRENT_TIMESTAMP,
+                PRIMARY KEY (ID_otpreme),
+                KEY fk_ecm_file_otprema (fk_ecm_file),
+                KEY fk_predmet_otprema (ID_predmeta),
+                KEY fk_potvrda_otprema (fk_potvrda_ecm_file),
+                KEY fk_user_otprema (fk_user_creat),
+                KEY idx_datum_otpreme (datum_otpreme),
+                KEY idx_tip_dokumenta (tip_dokumenta)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8"
         ];
 
