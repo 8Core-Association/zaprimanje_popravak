@@ -105,8 +105,8 @@ $setup_checks['company'] =
     trim($g('MAIN_INFO_SOCIETE_COUNTRY')) !== '' &&
     trim($g('MAIN_INFO_SOCIETE_MAIL'))    !== '';
 
-// Check users
-$sql = "SELECT COUNT(*) as count FROM " . MAIN_DB_PREFIX . "user WHERE statut = 1";
+// Check users (only employees, not administrators)
+$sql = "SELECT COUNT(*) as count FROM " . MAIN_DB_PREFIX . "user WHERE statut = 1 AND employee = 1";
 $resql = $db->query($sql);
 if ($resql && $obj = $db->fetch_object($resql)) {
     $setup_checks['users'] = (int)$obj->count > 0;
