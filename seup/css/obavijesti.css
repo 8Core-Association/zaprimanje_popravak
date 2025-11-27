@@ -8,23 +8,11 @@
  * distribuirati ili mijenjati bez izričitog dopuštenja autora.
  */
 
-.seup-hero-header {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: flex-start !important;
-    gap: 20px !important;
-    margin-bottom: 20px !important;
-    width: 100% !important;
-}
-
-.seup-hero-title-section {
-    flex: 1 !important;
-}
-
 #seupNotificationContainer {
-    flex-shrink: 0 !important;
-    align-self: flex-start !important;
-    margin-top: 10px !important;
+    position: fixed !important;
+    top: 80px !important;
+    right: 30px !important;
+    z-index: 9999 !important;
 }
 
 .seup-notification-bell-wrapper {
@@ -34,19 +22,22 @@
 
 .seup-notification-bell {
     position: relative;
-    background: transparent;
+    background: white;
     border: none;
     color: #333;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 14px 16px;
+    border-radius: 50%;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .seup-notification-bell:hover {
-    background: rgba(0, 0, 0, 0.05);
+    background: #f8f9fa;
     color: #0066cc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .seup-notification-badge {
