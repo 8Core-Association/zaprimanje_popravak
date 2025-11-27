@@ -309,7 +309,7 @@ if (!$all_configured) {
         print '<h4 class="setup-check-title">Barem jedan zaposlenik</h4>';
         print '<p class="setup-check-description">Potrebna je konfiguracija</p>';
         print '</div>';
-        print '<a href="' . DOL_URL_ROOT . '/user/list.php" class="seup-btn seup-btn-sm seup-btn-primary">Dodaj</a>';
+        print '<a href="' . DOL_URL_ROOT . '/user/card.php?mainmenu=hrm&leftmenu=hrm&action=create&employee=1" class="seup-btn seup-btn-sm seup-btn-primary">Dodaj</a>';
     }
     print '</div>';
     
